@@ -2,11 +2,14 @@ import Image from "next/image";
 
 function MyInput(): JSX.Element {
   return (
-    <div>
-      <p className="text-xs">Enter your Alias</p>
+    <div className="p-1 mx-auto my-6 bg-white w-max">
+      <p className="flex content-center text-xs">Enter your Alias</p>
       <div className="flex content-center">
-        <input className="border-black" type="text" placeholder="Alias" />
-        <div>
+        <div className="flex m-1">
+          <Image src="/Alias.svg" alt="validate" width={25} height={25} />
+        </div>
+        <input className="flex" type="text" placeholder="Alias" />
+        <div className="flex m-1">
           <Image src="/Validate.svg" alt="validate" width={25} height={25} />
         </div>
       </div>
