@@ -35,7 +35,11 @@ function Register(): JSX.Element {
         <NumberInput />
         <Button {...join} />
       </div>
-      <footer className="flex items-center justify-center h-40 py-2"></footer>
+      <footer className="flex items-center justify-center h-40 py-2">
+        <h5 className="flex mx-8 text-xs text-center">
+          Design by Matthias, Benjamin, Matthieu Made at the Wild Code School
+        </h5>
+      </footer>
     </div>
   );
 }

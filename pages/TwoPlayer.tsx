@@ -6,7 +6,11 @@ import Users from "../Components/Users";
 function TwoPlayer(): JSX.Element {
   const create = { input: "CREATE" };
   const play = { input: "LET'S PLAY" };
-  const playerOne = { name: "Jean-Neymar" };
+  const playerOne = {
+    name: "Jean-Neymar",
+    img: "/Bear.svg",
+    color: "bg-indigo-500",
+  };
 
   return (
     <div className="w-full h-full bg-gray-400">
@@ -37,7 +41,11 @@ function TwoPlayer(): JSX.Element {
         <Users {...playerOne} />
         <Button {...play} />
       </div>
-      <footer className="flex items-center justify-center h-40 py-2"></footer>
+      <footer className="flex items-center justify-center h-40 py-2">
+        <h5 className="flex mx-8 text-xs text-center">
+          Design by Matthias, Benjamin, Matthieu Made at the Wild Code School
+        </h5>
+      </footer>
     </div>
   );
 }
