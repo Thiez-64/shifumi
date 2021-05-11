@@ -3,7 +3,7 @@ import Button from "../Components/Button";
 import Users from "../Components/Users";
 import MyInput from "../Components/MyInput";
 
-function LaunchGame(): JSX.Element {
+function OnePlayer(): JSX.Element {
   
   const create = { input: "CREATE" };
   const play = { input: "LET'S PLAY" };
@@ -55,4 +55,4 @@ function LaunchGame(): JSX.Element {
   );
 }
 
-export default LaunchGame;
+export default OnePlayer;
