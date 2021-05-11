@@ -1,13 +1,5 @@
-import Link from "next/link";
-import HomeStart from "../Components/HomeStart";
-
-
 function Home() {
-  return (
-    <div>
-     <HomeStart />
-    </div>
-  );
+  return <div></div>;
 }
 
 export default Home;
