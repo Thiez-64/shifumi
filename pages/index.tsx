@@ -1,11 +1,11 @@
 import Link from "next/link";
+import HomeStart from "../Components/HomeStart";
+
 
 function Home() {
   return (
     <div>
-      <Link href="/Register">
-        <a>Go to Register Page</a>
-      </Link>
+     <HomeStart />
     </div>
   );
 }
