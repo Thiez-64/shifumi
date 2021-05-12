@@ -40,7 +40,7 @@ function EndOfGame({
       <div>
         <Link href="/">
           <a>
-            <button onClick={() => {}}>Retour à l'Accueil</button>
+            <button>Retour à l'Accueil</button>
           </a>
         </Link>
       </div>

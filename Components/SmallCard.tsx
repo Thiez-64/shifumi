@@ -17,7 +17,7 @@ function SmallCard({
   return (
     <button
       id={value}
-      className={`w-20 h-32 flex justify-center ${colorCard}`}
+      className={`w-20 h-32 flex justify-center m-1 ${colorCard}`}
       onClick={() => onClick(value)}
     >
       <Image
