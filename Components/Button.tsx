@@ -1,29 +1,25 @@
 import React, { useState } from "react";
-import { useRouter } from 'next/router'
+import { useRouter } from "next/router";
 
 interface Iprops {
   input: string;
   href?: string;
-  setPlayerName: Function;
-    
-  };
-    
-  
+  setPlayerName?: Function;
+}
 
-
-function Button({ input, href, setPlayerName}: Iprops): JSX.Element {
+function Button({ input, href, setPlayerName }: Iprops): JSX.Element {
   const router = useRouter();
-
 
   const [IsClicked, setIsClicked] = useState(false);
 
   const handleClick = () => {
-  
-    if (href){
+    if (href) {
       router.push(href);
     }
     setIsClicked((prevState) => !prevState);
-    setPlayerName();
+    if (setPlayerName) {
+      setPlayerName("");
+    }
   };
 
   return (
