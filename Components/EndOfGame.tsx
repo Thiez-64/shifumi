@@ -39,7 +39,7 @@ function EndOfGame({
           className={`h-10 bg-red-600 border-white rounded-3xl focus:outline-none`}
           onClick={reInitState}
         >
-          <div className={`text-white font-bold px-4`}> Rejouer</div>
+          <div className={`text-white font-bold px-4`}> REJOUER</div>
         </button>
       </div>
       <div className="flex items-center justify-center m-6">
@@ -49,7 +49,7 @@ function EndOfGame({
               className={`h-10 flex items-center bg-red-600 border-white rounded-3xl focus:outline-none`}
             >
               <div className={`text-white font-bold px-4`}>
-                Retour à l'Accueil
+                RETOUR A L'ACCUEIL
               </div>
             </button>
           </a>

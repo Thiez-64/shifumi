@@ -53,7 +53,7 @@ function OnePlayer(): JSX.Element {
         </h1>
       </header>
 
-      <div className="m-8 p-4">
+      <div className="p-4 m-8">
         <h1 className="flex justify-center m-4 text-2xl font-bold text-center">
           Create a game
         </h1>
