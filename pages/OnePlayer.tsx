@@ -19,6 +19,7 @@ function OnePlayer(): JSX.Element {
     name: "Jean-Neymar",
     img: "/Bear.svg",
     color: "bg-indigo-500",
+    score: 0,
   };
 
   const handleClickSetlayer = () => {
@@ -58,8 +59,8 @@ function OnePlayer(): JSX.Element {
         </h1>
 
         <MyInput
-          playerNameInput={playerNameInput}
-          handleChangeName={handleChangeName}
+          input={playerNameInput}
+          handleChangeInput={handleChangeName}
         />
         <Button {...create} onClick={handleClickSetlayer} />
       </div>

@@ -1,9 +1,14 @@
 import Image from "next/image";
+import { useState } from "react";
 import Button from "../Components/Button";
 import MyInput from "../Components/MyInput";
 import NumberInput from "../Components/NumberInput";
 
 function Register(): JSX.Element {
+  const [playerNameInput, setPlayerNameInput] = useState("");
+  const handleChangeName = (value: string) => {
+    setPlayerNameInput(value);
+  };
   const create = { input: "CREATE" };
   const join = { input: "JOIN" };
   return (
@@ -24,7 +29,7 @@ function Register(): JSX.Element {
         <h1 className="flex justify-center m-4 text-2xl font-bold text-center">
           Create a game
         </h1>
-        <MyInput />
+        <MyInput input={playerNameInput} handleChangeInput={handleChangeName} />
         <Button {...create} />
       </div>
       <p className="justify-center m-8 text-center">- OR -</p>
