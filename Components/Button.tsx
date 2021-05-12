@@ -1,14 +1,31 @@
 import React, { useState } from "react";
+import { useRouter } from 'next/router'
 
 interface Iprops {
   input: string;
-}
-
-function Button({ input }: Iprops): JSX.Element {
-  const [IsClicked, setIsClicked] = useState(false);
-  const handleClick = () => {
-    setIsClicked((prevState) => !prevState);
+  href?: string;
+  setPlayerName: Function;
+    
   };
+    
+  
+
+
+function Button({ input, href, setPlayerName}: Iprops): JSX.Element {
+  const router = useRouter();
+
+
+  const [IsClicked, setIsClicked] = useState(false);
+
+  const handleClick = () => {
+  
+    if (href){
+      router.push(href);
+    }
+    setIsClicked((prevState) => !prevState);
+    setPlayerName();
+  };
+
   return (
     <div className="flex justify-center">
       <button

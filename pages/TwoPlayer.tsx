@@ -4,8 +4,8 @@ import MyInput from "../Components/MyInput";
 import Users from "../Components/Users";
 
 function TwoPlayer(): JSX.Element {
-  const create = { input: "CREATE" };
-  const play = { input: "LET'S PLAY" };
+  const create = { input: "CREATE", href: "/" };
+  const play = { input: "LET'S PLAY", href: "/"  };
   const playerOne = {
     name: "Jean-Neymar",
     img: "/Bear.svg",

@@ -2,9 +2,14 @@ import Image from "next/image";
 import Button from "../Components/Button";
 import Users from "../Components/Users";
 import MyInput from "../Components/MyInput";
+import { useState } from "react";
 
 function OnePlayer(): JSX.Element {
-  
+
+  const [playerName,setPlayerName] = useState("");
+  const handleChangeName= ()=>{
+    setPlayerName();
+  }
   const create = { input: "CREATE" };
   const play = { input: "LET'S PLAY" };
   const playerOne = {
@@ -32,8 +37,9 @@ function OnePlayer(): JSX.Element {
         <h1 className="flex justify-center m-4 text-2xl font-bold text-center">
           Create a game
         </h1>
-        <MyInput />
-        <Button {...create} />
+      
+        <MyInput playerName={playerName} handleChangeName={handleChangeName}/> 
+        <Button {...create} setPlayerName={setPlayerName} />
       </div>
 
       <div> 
@@ -41,8 +47,8 @@ function OnePlayer(): JSX.Element {
         Player
       </h1>
       <div className="m-8">
-        <Users {...playerOne} />
-        <Button {...play} />
+        <Users {...playerOne} setplayerName={setPlayerName} />
+        <Button {...play} setPlayerName={setPlayerName} />
       </div>
       </div>
 

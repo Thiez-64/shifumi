@@ -1,9 +1,10 @@
 import Button from "../Components/Button";
 import Image from "next/image";
 
+
 export default function HomeStart(): JSX.Element {
-  const start = { input: "START" };
-  const multi = { input: "MULTI-PLAYER" };
+  const start = { input: "START", href: "/OnePlayer" };
+  const multi = { input: "MULTI-PLAYER", href: "/Register"};
   return (
     <div className="flex flex-col items-center bg-gray-400  bg-no-repeat h-screen bg-cover bg-center">
       <div className="infos  text-center md:text-center font-Quantico w-50 px-16 ">

@@ -1,5 +1,7 @@
+import HomeStart from "./HomeStart";
+
 function Home() {
-  return <div></div>;
+  return <HomeStart />;
 }
 
 export default Home;
