@@ -16,11 +16,12 @@ function PlayerGame({ player1, player2 }: Iprops): JSX.Element {
   const [scorePlayerOne, setScorePlayerOne] = useState(0);
   const [scorePlayerTwo, setScorePlayerTwo] = useState(0);
   const [gameEnd, setGameEnd] = useState(false);
+  const [viewCards, setViewCard] = useState(true);
 
   useEffect(() => {
     const randomIndex = Math.floor(Math.random() * choices.length);
     setPlayerTwoResponse(choices[randomIndex]);
-  }, []);
+  }, [gameEnd]);
 
   useEffect(() => {
     if (playerOneResponse.length > 0 && playerTwoResponse.length > 0) {
@@ -29,6 +30,7 @@ function PlayerGame({ player1, player2 }: Iprops): JSX.Element {
         setPlayerOneResponse("");
         const randomIndex = Math.floor(Math.random() * choices.length);
         setPlayerTwoResponse(choices[randomIndex]);
+        setViewCard(true);
       }, 3000);
     }
   }, [playerTwoResponse, playerOneResponse]);
@@ -94,7 +96,10 @@ function PlayerGame({ player1, player2 }: Iprops): JSX.Element {
   };
 
   const setResponsePlayer1 = (value: string) => {
-    setPlayerOneResponse(value);
+    setViewCard(false);
+    setTimeout(() => {
+      setPlayerOneResponse(value);
+    }, 2000);
   };
   if (gameEnd) {
     return (
@@ -121,16 +126,17 @@ function PlayerGame({ player1, player2 }: Iprops): JSX.Element {
         )}
         <TallCard value={playerOneResponse} />
       </div>
-      <div className="flex justify-around p-4">
-        {cards.map((card) => {
-          return (
-            <SmallCard
-              key={card.value}
-              {...card}
-              onClick={setResponsePlayer1}
-            />
-          );
-        })}
+      <div className="flex h-48 justify-around p-4">
+        {viewCards &&
+          cards.map((card) => {
+            return (
+              <SmallCard
+                key={card.value}
+                {...card}
+                onClick={setResponsePlayer1}
+              />
+            );
+          })}
       </div>
       <Users {...playerOne} />
     </div>
