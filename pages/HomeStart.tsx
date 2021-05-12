@@ -1,17 +1,18 @@
 import Button from "../Components/Button";
 import Image from "next/image";
-
+import Link from "next/link";
 
 export default function HomeStart(): JSX.Element {
-  const start = { input: "START", href: "/OnePlayer" };
-  const multi = { input: "MULTI-PLAYER", href: "/Register"};
+  const start = { input: "START" };
+  const multi = { input: "MULTI-PLAYER", href: "/Register" };
+
   return (
-    <div className="flex flex-col items-center bg-gray-400  bg-no-repeat h-screen bg-cover bg-center">
-      <div className="infos  text-center md:text-center font-Quantico w-50 px-16 ">
+    <div className="flex flex-col items-center h-screen bg-gray-400 bg-center bg-no-repeat bg-cover">
+      <div className="px-16 text-center infos md:text-center font-Quantico w-50">
         <p>Design by Matthias, Benjamin, Matthieu Made at Wild Code School</p>
       </div>
 
-      <div className="flex justify-center pt-16 p-8 ">
+      <div className="flex justify-center p-8 pt-16">
         <Image
           className="bg-cover "
           src="/shifumii.png"
@@ -20,18 +21,26 @@ export default function HomeStart(): JSX.Element {
           height={383}
         />
       </div>
-      <div className="text-2xl pt-4">
+      <div className="pt-4 text-2xl">
         <div>
-          <p>Shifumi Game</p>
+          <p>Shifumii Game</p>
         </div>
       </div>
 
       <div className=" pt-9 ">
-        <Button {...start} />
+        <Link href="/OnePlayer">
+          <a>
+            <Button {...start} />
+          </a>
+        </Link>
       </div>
 
       <div className="pt-6">
-        <Button {...multi} />
+        <Link href="/Register">
+          <a>
+            <Button {...multi} />
+          </a>
+        </Link>
       </div>
     </div>
   );
