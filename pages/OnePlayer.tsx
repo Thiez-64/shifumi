@@ -57,10 +57,7 @@ function OnePlayer(): JSX.Element {
           Create a game
         </h1>
 
-        <MyInput
-          playerNameInput={playerNameInput}
-          handleChangeName={handleChangeName}
-        />
+        <MyInput input={playerNameInput} handleChangeInput={handleChangeName} />
         <Button {...create} onClick={handleClickSetlayer} />
       </div>
 
