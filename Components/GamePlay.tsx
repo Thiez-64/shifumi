@@ -116,7 +116,7 @@ function PlayerGame({ player1, player2 }: Iprops): JSX.Element {
     );
   }
   return (
-    <div className="w-full h-full bg-gray-400">
+    <div className="w-full h-full p-4 bg-gray-400">
       <Users {...playerTwo} />
       <div className="flex justify-around p-6">
         {playerOneResponse.length > 0 ? (
@@ -126,7 +126,7 @@ function PlayerGame({ player1, player2 }: Iprops): JSX.Element {
         )}
         <TallCard value={playerOneResponse} />
       </div>
-      <div className="flex h-48 justify-around p-4">
+      <div className="flex items-center justify-center h-48">
         {viewCards &&
           cards.map((card) => {
             return (

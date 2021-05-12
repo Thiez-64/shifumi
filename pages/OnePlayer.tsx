@@ -53,15 +53,12 @@ function OnePlayer(): JSX.Element {
         </h1>
       </header>
 
-      <div className="m-8">
+      <div className="m-8 p-4">
         <h1 className="flex justify-center m-4 text-2xl font-bold text-center">
           Create a game
         </h1>
 
-        <MyInput
-          input={playerNameInput}
-          handleChangeInput={handleChangeName}
-        />
+        <MyInput input={playerNameInput} handleChangeInput={handleChangeName} />
         <Button {...create} onClick={handleClickSetlayer} />
       </div>
 

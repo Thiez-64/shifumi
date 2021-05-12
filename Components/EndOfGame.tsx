@@ -28,19 +28,30 @@ function EndOfGame({
     setScorePlayerTwo(0);
   };
   return (
-    <div>
-      <p>
+    <div className="flex flex-col items-center justify-center w-screen h-screen bg-gray-400">
+      <p className="flex items-center m-10 text-3xl font-bold text-center">
         {scorePlayerOne > scorePlayerTwo
-          ? `${playerOne} Wins`
-          : `${playerTwo} Wins`}
+          ? `${playerOne}, you are a Winner !`
+          : `${playerTwo}, you are a Winner !`}
       </p>
-      <div>
-        <button onClick={reInitState}> Rejouer</button>
+      <div className="flex items-center justify-center m-6">
+        <button
+          className={`h-10 bg-red-600 border-white rounded-3xl focus:outline-none`}
+          onClick={reInitState}
+        >
+          <div className={`text-white font-bold px-4`}> Rejouer</div>
+        </button>
       </div>
-      <div>
+      <div className="flex items-center justify-center m-6">
         <Link href="/">
           <a>
-            <button>Retour à l'Accueil</button>
+            <button
+              className={`h-10 flex items-center bg-red-600 border-white rounded-3xl focus:outline-none`}
+            >
+              <div className={`text-white font-bold px-4`}>
+                Retour à l'Accueil
+              </div>
+            </button>
           </a>
         </Link>
       </div>

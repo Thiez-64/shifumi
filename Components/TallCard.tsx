@@ -23,7 +23,11 @@ function SmallCard({ value }: Iprops): JSX.Element {
   };
 
   return (
-    <div className={`w-40 h-64 m-1 flex justify-center ${colorCard(value)}`}>
+    <div
+      className={`w-40 h-64 m-1 flex items-center justify-center ${colorCard(
+        value
+      )}`}
+    >
       <Image
         className="bg-center"
         src={imgCard(value)}

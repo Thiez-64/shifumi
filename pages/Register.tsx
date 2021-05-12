@@ -1,14 +1,9 @@
 import Image from "next/image";
-import { useState } from "react";
 import Button from "../Components/Button";
 import MyInput from "../Components/MyInput";
 import NumberInput from "../Components/NumberInput";
 
 function Register(): JSX.Element {
-  const [playerNameInput, setPlayerNameInput] = useState("");
-  const handleChangeName = (value: string) => {
-    setPlayerNameInput(value);
-  };
   const create = { input: "CREATE" };
   const join = { input: "JOIN" };
   return (
