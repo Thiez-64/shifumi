@@ -66,6 +66,8 @@ function PlayerGame({ player1, player2 }: Iprops): JSX.Element {
   useEffect(() => {
     if (scorePlayerOne === 3 || scorePlayerTwo === 3) {
       setGameEnd(true);
+    } else {
+      setGameEnd(false);
     }
   }, [scorePlayerOne, scorePlayerTwo]);
 
@@ -101,6 +103,10 @@ function PlayerGame({ player1, player2 }: Iprops): JSX.Element {
         playerTwo={playerTwo.playerName}
         scorePlayerOne={scorePlayerOne}
         scorePlayerTwo={scorePlayerTwo}
+        setScorePlayerOne={setScorePlayerOne}
+        setScorePlayerTwo={setScorePlayerTwo}
+        setPlayerOneResponse={setPlayerOneResponse}
+        setPlayerTwoResponse={setPlayerTwoResponse}
       />
     );
   }
