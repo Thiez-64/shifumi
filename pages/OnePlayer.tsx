@@ -3,12 +3,16 @@ import Button from "../Components/Button";
 import Users from "../Components/Users";
 import MyInput from "../Components/MyInput";
 import { useState } from "react";
+import GamePlay from "../Components/GamePlay";
 
 function OnePlayer(): JSX.Element {
+  const [error, setError] = useState("");
   const [playerName, setPlayerName] = useState("");
-  const handleChangeName = () => {
-    setPlayerName("");
+  const [playerNameInput, setPlayerNameInput] = useState("");
+  const handleChangeName = (value: string) => {
+    setPlayerNameInput(value);
   };
+  const [gamePlay, setGamePlay] = useState(false);
   const create = { input: "CREATE" };
   const play = { input: "LET'S PLAY" };
   const playerOne = {
@@ -16,6 +20,22 @@ function OnePlayer(): JSX.Element {
     img: "/Bear.svg",
     color: "bg-indigo-500",
   };
+
+  const handleClickSetlayer = () => {
+    setPlayerName(playerNameInput);
+  };
+
+  const handleClickStart = () => {
+    if (playerName.length > 0) {
+      setGamePlay(true);
+    } else {
+      setError("Please enter your name");
+    }
+  };
+
+  if (gamePlay) {
+    return <GamePlay player1={playerName} player2="Jean Neymar" />;
+  }
 
   return (
     <div className="w-full h-full bg-gray-400">
@@ -37,8 +57,11 @@ function OnePlayer(): JSX.Element {
           Create a game
         </h1>
 
-        <MyInput playerName={playerName} handleChangeName={handleChangeName} />
-        <Button {...create} setPlayerName={setPlayerName} />
+        <MyInput
+          playerNameInput={playerNameInput}
+          handleChangeName={handleChangeName}
+        />
+        <Button {...create} onClick={handleClickSetlayer} />
       </div>
 
       <div>
@@ -46,9 +69,10 @@ function OnePlayer(): JSX.Element {
           Player
         </h1>
         <div className="m-8">
-          <Users {...playerOne} setplayerName={setPlayerName} />
-          <Button {...play} setPlayerName={setPlayerName} />
+          <Users {...playerOne} playerName={playerName} />
+          <Button {...play} onClick={handleClickStart} />
         </div>
+        <span>{error}</span>
       </div>
 
       <footer className="flex items-center justify-center h-40 py-2">

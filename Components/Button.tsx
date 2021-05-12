@@ -4,28 +4,18 @@ import { useRouter } from "next/router";
 interface Iprops {
   input: string;
   href?: string;
-  setPlayerName?: Function;
+  onClick?: () => void;
 }
 
-function Button({ input, href, setPlayerName }: Iprops): JSX.Element {
+function Button({ input, href, onClick }: Iprops): JSX.Element {
   const router = useRouter();
 
   const [IsClicked, setIsClicked] = useState(false);
 
-  const handleClick = () => {
-    if (href) {
-      router.push(href);
-    }
-    setIsClicked((prevState) => !prevState);
-    if (setPlayerName) {
-      setPlayerName("");
-    }
-  };
-
   return (
     <div className="flex justify-center">
       <button
-        onClick={handleClick}
+        onClick={onClick}
         className={`h-10 ${
           IsClicked ? "bg-white border-red-600" : "bg-red-600 border-white"
         } rounded-3xl focus:outline-none`}

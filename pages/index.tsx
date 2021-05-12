@@ -1,6 +1,6 @@
 import HomeStart from "./HomeStart";
 
-function Home() {
+function Home(): JSX.Element {
   return <HomeStart />;
 }
 
